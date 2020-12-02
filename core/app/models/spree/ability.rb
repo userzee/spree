@@ -48,7 +48,7 @@ module Spree
         can :create, Spree::Address do |_address|
           user.id.present?
         end
-        can :read, CreditCard, user_id: user.id
+        can [:read, :destroy], CreditCard, user_id: user.id
         can :read, Product
         can :read, ProductProperty
         can :read, Property
